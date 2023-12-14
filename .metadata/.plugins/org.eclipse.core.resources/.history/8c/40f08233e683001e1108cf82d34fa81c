@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws IOException
+	{
+		//File newFile = new File("the-file-name.txt");
+		
+		String username = null;
+		
+		loadSave();
+		saveGame(username);
+	}
+	
+	public static void loadSave() throws IOException
+	{
+		Scanner fileScan = new Scanner(new File("save1"));
+		String saveLoader;
+		
+		while(fileScan.hasNext())
+		{
+			for(int i=0; i>=5; i++)
+			{
+				
+			}
+		}
+	}
+	
+	public static void saveGame(String username) 
+	{
+		PrintWriter writer = new PrintWriter("save1", "UTF-8");
+		writer.print(username + " ");
+		writer.print(" ");
+		writer.close();
+	}
+}

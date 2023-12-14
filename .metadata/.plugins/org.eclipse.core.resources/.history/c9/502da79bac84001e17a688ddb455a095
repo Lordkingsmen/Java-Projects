@@ -1,0 +1,64 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws IOException
+	{
+		String username = null;
+		String savename = null;
+		String yesno;
+		boolean YNConfirm;
+		long points = 0;
+		
+		Scanner wordTyper = new Scanner(System.in);
+		
+		System.out.println("enter your username (no spaces)");
+		username = wordTyper.next();
+		
+		System.out.println("New save? (yes/no, no capitals)");
+		yesno = wordTyper.next();
+		while(YNConfirm==ture)
+		{
+			switch(yesno)
+			{
+				case "yes":
+				case "no":
+				default:
+			}
+		}
+		
+		saveGame(savename,username,points);
+		loadSave(savename,username,points);
+		
+		System.out.println(username + savename);
+		wordTyper.close();
+	}
+	
+	public static void loadSave(String savename, String username, long points) throws IOException
+	{
+		Scanner fileScan = new Scanner(new File(savename));
+		String saveLoader;
+		
+		while(fileScan.hasNext())
+		{
+			for(int i=0; i<=5; i++)
+				switch(i)
+				{
+					case 1: username = fileScan.next(); break;
+					case 2: savename = fileScan.next(); break;
+					case 3: points = fileScan.nextInt(); break;
+					default: break;
+				}
+		}
+	}
+	
+	public static void saveGame(String savename, String username, long points) throws IOException
+	{
+		PrintWriter writer = new PrintWriter(savename, "UTF-8");
+		writer.print(savename + " ");
+		writer.print(username + " ");
+		writer.print(points + " ");
+		writer.close();
+	}
+}

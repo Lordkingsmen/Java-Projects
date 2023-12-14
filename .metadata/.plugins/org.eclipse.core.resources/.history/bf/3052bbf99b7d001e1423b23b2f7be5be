@@ -1,0 +1,33 @@
+import java.util.Random;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		multiplyer(5);
+		
+		Random rand = new Random();
+		int num = rand.nextInt(10)+1;
+		randomize(num, rand);
+	}
+	public static void multiplyer(int n)
+	{
+		int multiples=n;
+		while(multiples<=100)
+		{
+			multiples+=5;
+			System.out.println(multiples + " ");
+		}
+	}
+	
+	public static int randomize(int num, Random rand)
+	{
+		int randnum = num;
+		while(randnum != 6)
+		{
+			System.out.println(randnum + " ");
+			randnum = rand.nextInt(10)+1;
+		}
+		return randnum;
+	}
+}

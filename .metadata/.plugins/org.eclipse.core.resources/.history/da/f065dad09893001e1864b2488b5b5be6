@@ -1,0 +1,21 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Mian
+{
+	public static String[] chirp = new String[4945];
+	
+	public static void loadSave(String[] names) throws IOException
+	{
+		Scanner fileScan = new Scanner(new File(first-names));
+		int counter = 0;
+		
+		while (fileScan.hasNextLine())
+		{
+			counter++;
+            chirp[counter-1] = fileScan.nextLine();
+        }
+		return;
+	}
+}

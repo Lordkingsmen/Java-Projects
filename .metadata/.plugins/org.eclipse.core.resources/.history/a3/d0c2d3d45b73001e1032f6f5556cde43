@@ -1,0 +1,17 @@
+public class Main {
+
+	public static void main(String[] args)
+	{
+		System.out.print("#");
+		for(int o=0; o<31; o++)
+		{
+			System.out.print("-");
+			for(; o==30; o++)
+			{
+				System.out.println("#");
+				System.out.print("#");
+			}
+		}
+		
+	}
+}

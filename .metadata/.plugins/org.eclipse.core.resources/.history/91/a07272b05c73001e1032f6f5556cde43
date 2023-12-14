@@ -1,0 +1,33 @@
+public class Main {
+
+	public static void main(String[] args)
+	{
+		System.out.print("#");
+		for(int o=0, i=0; o<31; o++)
+		{
+			if(i<1)
+			{
+				System.out.print("-");
+			}
+			else
+			{
+				System.out.print(" ");
+			}
+
+			for(; o==30;o++, i++)
+			{
+				if(i<5)
+				{
+					System.out.println("#");
+					System.out.print("#");
+					o=0;
+				}
+				else
+				{
+					System.out.print("#");
+				}
+			}
+		}
+		
+	}
+}

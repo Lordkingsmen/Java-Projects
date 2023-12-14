@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	static int[][] dice = new int[0][0];
+	
+	public static void main(String[] args)
+	{
+		Scanner pAMTs = new Scanner(System.in);
+		int pAMT;
+		System.out.println("Enter how many players there will be (2-4)");
+		pAMT = pAMTs.nextInt();
+		int[][] dice = new int[pAMT][5];
+		rolldice();
+	}
+	
+	public static void rolldice()
+	{
+		for(int i=0;i<=4;i++)
+		{
+			int num = rand.nextInt(6)+1;
+			dice[i]=num;
+		}
+		System.out.println(Arrays.toString(dice));
+	}
+}

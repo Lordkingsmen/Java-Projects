@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	static int[][] diceP;
+	static Random rand = new Random();
+	static Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args)
+	{
+		int pAMT=0;
+		int pTurn=0;
+		System.out.println("Enter how many players there will be");
+		pAMT = scanner.nextInt();
+		diceP = new int[pAMT][5];
+		rolldice(1);
+	}
+	
+	public static void rolldice(int j)
+	{
+		boolean[] diceK = new boolean[5];
+		int diceN = 0;
+		for(int i=0;i<=4;i++)
+		{
+			int num = rand.nextInt(6)+1;
+			System.out.print(num + (" "));
+			diceP[j-1][i]=num;
+		}
+		System.out.println();
+		System.out.println("enter the number of what dice you want to keep (1-5, left to right, seperate numbers with spaces, no commas.)");
+		
+		if (scanner.hasNextInt())
+		{
+			diceN = scanner.nextInt();
+			switch(diceN)
+			{
+				case 1: diceK[0]=true;
+				case 2: diceK[1]=true;
+				case 3: diceK[2]=true;
+				case 4: diceK[3]=true;
+				case 5: diceK[4]=true;
+			}
+		}
+		
+		for(int i=0;i<=4;i++)
+		{
+			if(diceK[i]==true)
+			{
+				System.out.print(i);
+				continue;
+			}
+			else if(diceK[i]==false)
+			{
+				System.out.print(i);
+				int num = rand.nextInt(6)+1;
+				diceP[j-1][i]=num;
+			}
+			System.out.print(diceP[j-1][i]);
+		}
+		
+		System.out.println();
+		System.out.println(Arrays.deepToString(diceP));
+	}
+}

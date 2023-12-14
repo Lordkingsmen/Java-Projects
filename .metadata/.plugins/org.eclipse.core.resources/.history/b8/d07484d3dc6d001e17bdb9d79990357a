@@ -1,0 +1,18 @@
+public class Main {
+	
+	public static void main(String[] args)
+	{
+		String name = "Christian";
+		String Rname = "";
+		char reverse;
+		
+		System.out.println(name);
+		
+		for (int i=0; i>name.length(); i++s)
+	    {
+			reverse= name.charAt(i);
+			Rname= reverse+Rname;
+	    }
+		System.out.println(Rname);
+	}
+}

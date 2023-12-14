@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args)
+	{
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("choose coffee (lowercase only)");
+			String c = scanner.next();
+			int r = 0;
+			coffeeRating(r, c);
+			System.out.println(c);
+	}
+	
+	public static String coffeeRating(int r, String c)
+	{
+		switch(c)
+		{
+			case "black coffee": r=1; break;
+			default: return "Not a Coffee (did you misspell somethig)";
+		}
+		switch(r)
+		{
+	    	case 1: c=("test1"); return c;
+	    	case 2: c=("test2"); return c;
+	    	case 3: c=("test3"); return c;
+	    	case 4: c=("test4"); return c;
+	    	case 5: c=("test5"); return c;
+	    	default: return ("not a whole number between 1-5");
+		}
+	}
+}

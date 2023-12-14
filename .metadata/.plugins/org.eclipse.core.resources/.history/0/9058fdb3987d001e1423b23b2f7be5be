@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		multiplyer(5);
+	}
+	public static void multiplyer(int n)
+	{
+		int multiples=n;
+		while(n>=100)
+		{
+			multiples+=5;
+			System.out.println(multiples + " ");
+		}
+	}
+}

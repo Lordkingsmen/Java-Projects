@@ -1,0 +1,12 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+		double a = 4.0;
+		double b = 3;
+		double y = b / a;
+		double z = a / b;
+		System.out.println
+		("I didn't expect the answer to be " + ((100 / 27) * 27 + (100 % 27)));
+	}
+}

@@ -1,0 +1,12 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+		double a = 4.0;
+		double b = 3;
+		double y = b / a;
+		double z = a / b;
+		System.out.println
+		(1 + " teacher, " + 1.0 + " werewolf, and one zombie walk into a bar. Three zombies walk out!");
+	}
+}

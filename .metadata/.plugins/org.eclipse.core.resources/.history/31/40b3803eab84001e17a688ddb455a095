@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws IOException
+	{
+		String username = ("lapa");
+		String savename = ("wapa");
+		long points = 0;
+		
+		Scanner setUsername = new Scanner(System.in);
+		
+		System.out.println("enter your username (no spaces)");
+		username = setUsername.next();
+		
+		saveGame(savename,username,points);
+		loadSave(savename,username,points);
+		
+		System.out.println(username + savename);
+	}
+	
+	public static void loadSave(String savename, String username, long points) throws IOException
+	{
+		Scanner fileScan = new Scanner(new File(savename));
+		String saveLoader;
+		
+		while(fileScan.hasNext())
+		{
+			for(int i=0; i<=5; i++)
+				switch(i)
+				{
+					case 1: username = fileScan.next(); break;
+					case 2: savename = fileScan.next(); break;
+					default: break;
+				}
+		}
+	}
+	
+	public static void saveGame(String savename, String username, long points) throws IOException
+	{
+		PrintWriter writer = new PrintWriter(savename, "UTF-8");
+		writer.print(savename + " ");
+		writer.print(username + " ");
+		writer.print(points + " ");
+		writer.close();
+	}
+}

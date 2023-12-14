@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		String inputS = scanner.toString();
+		int rank = 1;
+		String coffeeOrder = "black coffee";
+		coffeeRating(rank, coffeeOrder);
+	}
+	
+	public static String coffeeRating(int r, String c)
+	{
+		switch(c)
+		{
+			case "black coffee": r=1; break;
+			default: System.out.println("Not a Coffee (did you misspell somethig)"); break;
+		}
+		switch(r)
+		{
+	    	case 1: System.out.println("very bad word"); break;
+	    	case 2: System.out.println("failure"); break;
+	    	case 3: System.out.println("failure"); break;
+	    	case 4: System.out.println("1 star left failure"); break;
+	    	case 5: System.out.println("average"); break;
+	    	default: System.out.println("not a whole number between 1-5"); break;
+		}
+		
+		return c;
+	}
+}

@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args)
+	{
+		String yum = "mashed potatoes";
+		String bestPie = "a-p-p-l-e";
+		String obligatoryVeg = "GREEN beanS";
+		
+		yum.charAt(3*2+1);
+		obligatoryVeg.indexOf("e");
+		bestPie.length();
+		yum.substring(3);
+		yum.substring(11,14);
+		
+		for (int i=0; i<str.length(); i++)
+	      {
+	        ch= str.charAt(i);
+	        nstr= ch+nstr;
+	      }
+	}
+}

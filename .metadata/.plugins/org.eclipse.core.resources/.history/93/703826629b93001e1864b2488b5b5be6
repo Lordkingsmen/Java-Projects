@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	public static String[] chirp = new String[4945];
+	
+	public static void main(String[] args) throws IOException
+	{
+		Scanner wordTyper = new Scanner(System.in);
+		int awnser;
+		
+		readnames();
+		System.out.println("Length of names you want to find");
+		awnser = wordTyper.nextInt();
+		findnames(awnser);
+	}
+	
+	public static void readnames() throws IOException
+	{
+		Scanner fileScan = new Scanner(new File("C:\\Users\\avelichr000\\Documents\\Java Projects\\Namefinder\\src\\names.txt"));
+		int counter = 0;
+		
+		while (fileScan.hasNextLine())
+		{
+			counter++;
+            chirp[counter-1] = fileScan.nextLine();
+        }
+		System.out.println(Arrays.toString(chirp));
+		return;
+	}
+	
+	public static void findnames(int awnser)
+	{
+		String names;
+		for(int i = 0; i < chirp.length; i++)
+		{
+			if(chirp[i].length() == awnser)
+			{
+				names += chirp[i] + "; ";
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+		String FirstName = "Timmy ";
+		char MiddleName = 'T';
+		String LastName = "Timyson";
+		byte Grade = 12;
+		short Attendance = 100;
+		double GPA = 4.0;
+		boolean Degree = true;
+		byte Yrs_Repeated = 0;
+		boolean Non_Disruptive = true;
+		short Days_Of_Dentention = 0;
+		
+		System.out.println
+		(
+		"Name: " + FirstName + MiddleName + ". " + LastName + "\r\n"
+		+ "Grade: " + Grade + "\r\n"
+		+ "Attendance: " + Attendance + "%\r\n"
+		+ "G.P.A.: " + GPA + "\r\n"
+		+ "Degree? " + Degree + "\r\n"
+		+ "School Years Repeated (if any): " + "" + "\"\"" + Yrs_Repeated + "\r\n"
+		+ "Non-Disruptive? " + Non_Disruptive + "\r\n"
+		+ "Days of dentention (if any): " + Days_Of_Dentention + "\r\n"
+		);
+	}
+}

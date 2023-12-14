@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws FileNotFoundException, IOException
+	{
+		PrintWriter writer = new PrintWriter("save1", "UTF-8");
+		//File newFile = new File("the-file-name.txt");
+		
+		String username;
+		
+		loadSave();
+		saveGame(writer);
+	}
+	
+	public static void loadSave() throws IOException
+	{
+		Scanner fileScan = new Scanner(new File("save1"));
+		String saveLoader;
+		
+		while(fileScan.hasNextLine())
+		{
+			System.out.println(fileScan.nextLine() + (" "));
+			
+			switch()
+			{
+				case:
+			}
+		}
+	}
+	
+	public static void saveGame(PrintWriter writer)
+	{
+		writer.println("The first line");
+		writer.print("The second line");
+		writer.close();
+	}
+}

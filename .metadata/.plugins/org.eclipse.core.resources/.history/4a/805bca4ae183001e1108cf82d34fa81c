@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) throws FileNotFoundException, IOException
+	{
+		PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
+		writer.println("The first line");
+		writer.print("The second line");
+		writer.close();
+		
+		File newFile = new File("the-file-name.txt");
+		Scanner fileScan = new Scanner(new File("the-file-name.txt"));
+		
+		while(fileScan.hasNextLine())
+		{
+			System.out.println(fileScan.nextLine() + (" "));
+		}
+	}
+}
