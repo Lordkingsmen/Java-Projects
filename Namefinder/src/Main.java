@@ -13,6 +13,8 @@ public class Main
 		System.out.println("Length of names you want to find");
 		awnser = wordTyper.nextInt();
 		findnames(chirp, awnser);
+		wordTyper.close();
+		rotateRight(chirp);
 	}
 	
 	public static void readnames(String[] chirp) throws IOException
@@ -33,12 +35,10 @@ public class Main
 	{
 		String names = "";
 		for(int i = 0; i < chirp.length; i++)
-		{
 			if(chirp[i].length() == awnser)
 			{
-				names += chirp[i] + "; ";
+				names += chirp[i] + " ";
 			}
-		}
 		System.out.println(names);
 	}
 	
@@ -49,7 +49,24 @@ public class Main
 			{
 				while (reader.readLine() != null) lines++;
 			}
+			reader.close();
 			return lines;
-
 	}
+	
+	public static String[] redshift(String[] chirper)
+	{
+		rotateRight(chirper);
+		return chirper;
+	}
+	
+	public static void rotateRight(String[] chirper)
+	{
+        String lastElement = chirper[chirper.length - 1];
+        for (int i = chirper.length - 1; i > 0; i--)
+        {
+            chirper[i] = chirper[i - 1];
+        }
+        chirper[0]=lastElement;
+        System.out.println(Arrays.toString(chirper));
+    }
 }

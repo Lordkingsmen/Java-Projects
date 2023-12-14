@@ -89,13 +89,13 @@ public class Main
         for(int i=0; i< boolarr.length; i++){
             boolarr[i][dice[i]] = true;
         }
-        for(int i=0; i< boolarr.length; i++)
+        /*for(int i=0; i< boolarr.length; i++)
         {
             if(boolarr[i][dice[i]] == true)
             {
-            	System.out.println("lalala" +dice[i]);
+            	System.out.println("lalala " +dice[i]);
             }
-        }
+        }*/
         for(boolean[] br: boolarr){
             for(boolean b: br){
                 System.out.print((b)?"."+b+". ":b+" ");
