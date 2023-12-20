@@ -3,10 +3,15 @@ import java.util.*;
 
 public class Main
 {
-	static String dicerolls = "dicerolls";
-	static int[][] diceP;
-	static Random rand = new Random();
 	static Scanner scanner = new Scanner(System.in);
+	
+	static Random rand = new Random();
+	
+	static String dicerolls = "dicerolls";
+	
+	static boolean setassigner[][];
+	
+	static int[][] diceP;
 	static int pTurn=1;
 	
 	public static void main(String[] args) throws IOException
@@ -17,7 +22,7 @@ public class Main
 		diceP = new int[Integer.parseInt(pAMT)][5];
 		System.out.println("Player "+pTurn+"'s turn!");
 		rolldice();
-		dicematch();
+		setassigner=dicematch();
 	}
 	
 	public static void rolldice() throws IOException
@@ -81,7 +86,8 @@ public class Main
 		writer.close();
 	}
 	
-	public static void dicematch() {
+	public static boolean[][] dicematch()
+	{
         int dice[] = checkdice();
 
         boolean[][] boolarr = new boolean[6][6];
@@ -89,18 +95,17 @@ public class Main
         for(int i=0; i< boolarr.length; i++){
             boolarr[i][dice[i]] = true;
         }
-        /*for(int i=0; i< boolarr.length; i++)
-        {
-            if(boolarr[i][dice[i]] == true)
-            {
-            	System.out.println("lalala " +dice[i]);
-            }
-        }*/
         for(boolean[] br: boolarr){
             for(boolean b: br){
                 System.out.print((b)?"."+b+". ":b+" ");
             }
             System.out.println();
         }
+		return boolarr;
     }
+
+	public static void matchmatch()
+	{
+		
+	}
 }
