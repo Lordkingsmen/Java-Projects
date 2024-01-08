@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Main
 {
+	static boolean isWin;
+	
 	public static void main(String[] args) throws IOException
 	{
 		Scanner wordTyper = new Scanner(System.in);	
@@ -10,8 +12,10 @@ public class Main
 		Random aSelect = new Random();
 		
 		int wordLength = lineCounter();
+		int tries = 0;
+		int totalTries = 6;
 		
-		int tries = 5;
+		boolean win;
 
 		String[] words = new String[wordLength];
 		
@@ -23,12 +27,15 @@ public class Main
 		
 		String hiddenA = gameSet(answerL);
 		
-		while(!(hiddenA.equalsIgnoreCase(answer))||tries<=5)
+		while(!(hiddenA.equalsIgnoreCase(answer))&&tries<=totalTries)
 		{
-			hiddenA=gamePlay(wordTyper,hiddenA,answer,answerL);
+			hiddenA=gamePlay(wordTyper,hiddenA,answer,answerL,aSelect);
 			tries++;
 		}
-		
+		if(isWin)
+			System.out.println("You win.");
+		else
+			System.out.println("You Lose. The awnser was "+answer+".");
 		wordTyper.close();
 	}
 	
@@ -62,29 +69,35 @@ public class Main
 		return hidden;
 	}
 	
-	public static String gamePlay(Scanner wordTyper,String hidden,String answer,int answerL)
+	public static String gamePlay(Scanner wordTyper,String hidden,String answer,int answerL, Random hSelect)
 	{//This code takes your input and checks to see if it matches, or is the answer to see if you win.
 		String guessAll = wordTyper.next();
 		char guess = guessAll.charAt(0);
-		switch(guessAll.length())
-		{
-			case 1:
-				for(int i=0;i<answerL;i++)
-				{
-					if(guess==answer.charAt(i))
+		if(guessAll.equalsIgnoreCase("hint"))
+			guessAll.charAt(hSelect.nextInt(answer.length())+1);
+		else
+			switch(guessAll.length())
+			{
+				case 1:
+					for(int i=0;i<answerL;i++)
 					{
-						char[] answerC = hidden.toCharArray();
-						answerC[i] = guess;
-						hidden = String.valueOf(answerC);
+						if(guess==answer.charAt(i))
+						{
+							char[] answerC = hidden.toCharArray();
+							answerC[i] = guess;
+							hidden = String.valueOf(answerC);
+						}
 					}
-				}
-				System.out.println(hidden);
-				return hidden;
-			default:
-				if(guessAll.equalsIgnoreCase(answer))
-					return guessAll;
-				else
+					System.out.println(hidden);
 					return hidden;
+				default:
+					if(guessAll.equalsIgnoreCase(answer))
+					{
+						isWin=true;
+						return guessAll;
+					}
+					else
+						return hidden;
 		}
 	}
 }
