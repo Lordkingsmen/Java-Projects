@@ -74,30 +74,29 @@ public class Main
 		String guessAll = wordTyper.next();
 		char guess = guessAll.charAt(0);
 		if(guessAll.equalsIgnoreCase("hint"))
-			guessAll.charAt(hSelect.nextInt(answer.length())+1);
-		else
-			switch(guessAll.length())
-			{
-				case 1:
-					for(int i=0;i<answerL;i++)
+			hidden.charAt(hSelect.nextInt(hidden.length())+1);
+		switch(guessAll.length())
+		{
+			case 1:
+				for(int i=0;i<answerL;i++)
+				{
+					if(guess==answer.charAt(i))
 					{
-						if(guess==answer.charAt(i))
-						{
-							char[] answerC = hidden.toCharArray();
-							answerC[i] = guess;
-							hidden = String.valueOf(answerC);
-						}
+						char[] answerC = hidden.toCharArray();
+						answerC[i] = guess;
+						hidden = String.valueOf(answerC);
 					}
-					System.out.println(hidden);
+				}
+				System.out.println(hidden);
+				return hidden;
+			default:
+				if(guessAll.equalsIgnoreCase(answer))
+				{
+					isWin=true;
+					return guessAll;
+				}
+				else
 					return hidden;
-				default:
-					if(guessAll.equalsIgnoreCase(answer))
-					{
-						isWin=true;
-						return guessAll;
-					}
-					else
-						return hidden;
 		}
 	}
 }
