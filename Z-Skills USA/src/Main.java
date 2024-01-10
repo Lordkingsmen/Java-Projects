@@ -5,18 +5,25 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		int bPScale = 0;
-		int persTrait = 0;
-		int creTrait = 0;
-		int deTrait = 0;
-		int teamTrait = 0;
-		int sum = 0;//0-4
+		double bPScale = 0;
+		double persTrait = 7;
+		double creTrait = 6;
+		double deTrait = 6;
+		double teamTrait = 1;
+		double sum = 0;//0-4
 		
-		bPScale=MEAN(sum){Math.sqrt(Math.abs(2*persTrait+/-(creTrait))*(creTrait)+2*deTrait+(3*teamTrait–creTrait)))};
+		bPScale=diff(persTrait,creTrait,deTrait,teamTrait);
+		System.out.println(bPScale=Math.sqrt(Math.abs(2*persTrait+(creTrait)*(creTrait)+2*deTrait+(3*teamTrait-creTrait))));
 	}
-
-	private static int MEAN(int sum)
+	
+	public static double diff(double traitPoints, double persTrait, double creTrait, double deTrait)
 	{
-		return 0;
+		double traitDiff=traitPoints-5;
+		double persDiff=persTrait-5;
+		double creDiff=creTrait-5;
+		double deDiff=deTrait-5;
+		double totalDiff=0;
+		
+		return totalDiff=(totalDiff-(traitDiff+persDiff+creDiff+deDiff));
 	}
 }
