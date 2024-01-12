@@ -6,21 +6,23 @@ public class Main
 {
 	public static void main(String[] args) throws IOException
 	{
-		double[] dataSet = new double[lineCounter()];
+		int lines = lineCounter();
+		double[][] dataSet = new double[lines][5];
+		dataSet = readData(dataSet,lines);
+		
 		double bPScale;
-		double persTrait = 7;
-		double creTrait = 6;
-		double deTrait = 6;
-		double teamTrait = 1;
+		double persTrait;
+		double creTrait;
+		double deTrait;
+		double teamTrait;
 		
-		persTrait=diff(persTrait);
-		creTrait=diff(creTrait);
-		deTrait=diff(deTrait);
-		teamTrait=diff(teamTrait);
+		for()
+		{
+			
+		}
+		System.out.println(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
 		
-		readNames(dataSet);
-		
-		System.out.println(dSet(persTrait,creTrait,deTrait,teamTrait));
+		System.out.println(Arrays.deepToString(dataSet));
 	}
 	
 	public static double diff(double a)
@@ -42,17 +44,19 @@ public class Main
 			return lines;
 	}
 	
-	public static double[] readNames(double[] dataSet) throws IOException
+	public static double[][] readData(double[][] dataSet, int lines) throws IOException
 	{//This uses the now prepared array to actually input the data from the set.
 		Scanner fileScan = new Scanner(new File("src\\Data.txt"));
-		int counter = 0;
-		
 		while (fileScan.hasNextLine())
-		{
-			counter++;
-			dataSet[counter-1]=fileScan.nextInt();
-        }
+			for(int i=0;i<lines;i++)
+				for(int j=0;j<5;j++)
+					dataSet[i][j]=fileScan.nextInt();
 		fileScan.close();
 		return dataSet;
+	}
+	
+	public static void setData()
+	{
+		
 	}
 }
