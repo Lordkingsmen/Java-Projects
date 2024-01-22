@@ -70,7 +70,7 @@ public class Main
 					case 4:teamTrait=dataSet[i][j];
 				}
 			avgScore[i]=(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
-			avgScore[i]=rounder(avgScore,i);
+			avgScore[i]=rnd.h(avgScore[i]);
 		}
 		
 		return avgScore;
@@ -86,13 +86,8 @@ public class Main
 			for(int k=0;k<5;k++,i++)
 				a=a+avgScore[i];
 			avgTotal[j]=a/5;
-			avgTotal[j]=rounder(avgTotal,j);
+			avgTotal[j]=rnd.h(avgTotal[j]);
 		}
 		return avgTotal;
-	}
-	
-	public static double rounder(double[] a,int b)
-	{//Rounds to the nearest 100th.
-		return a[b]=Math.round(a[b] * 100.0) / 100.0;
 	}
 }
