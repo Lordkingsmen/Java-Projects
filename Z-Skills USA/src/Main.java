@@ -10,19 +10,11 @@ public class Main
 		double[][] dataSet = new double[lines][5];
 		dataSet = readData(dataSet,lines);
 		
-		double bPScale;
-		double persTrait;
-		double creTrait;
-		double deTrait;
-		double teamTrait;
-		
-		for()
-		{
-			
-		}
-		System.out.println(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
-		
 		System.out.println(Arrays.deepToString(dataSet));
+		
+		System.out.println(Arrays.toString(setData(dataSet,lines)));
+		
+		System.out.println(Arrays.toString(avgData(setData(dataSet,lines),lines)));
 	}
 	
 	public static double diff(double a)
@@ -41,22 +33,66 @@ public class Main
 	      	BufferedReader reader = new BufferedReader(new FileReader("src\\Data.txt"));
 				while (reader.readLine() != null) lines++;
 			reader.close();
+			while(!(lines%5==0))
+				lines++;
 			return lines;
 	}
 	
 	public static double[][] readData(double[][] dataSet, int lines) throws IOException
 	{//This uses the now prepared array to actually input the data from the set.
 		Scanner fileScan = new Scanner(new File("src\\Data.txt"));
-		while (fileScan.hasNextLine())
+		while (fileScan.hasNextInt())
 			for(int i=0;i<lines;i++)
 				for(int j=0;j<5;j++)
-					dataSet[i][j]=fileScan.nextInt();
+					if(!(fileScan.hasNextInt()))
+						dataSet[i][j]=0;
+					else
+						dataSet[i][j]=fileScan.nextInt();
 		fileScan.close();
 		return dataSet;
 	}
 	
-	public static void setData()
+	public static double[] setData(double[][] dataSet, int lines)
 	{
+		double bPScale=0,persTrait=0,creTrait=0,deTrait=0,teamTrait=0;
 		
+		double[] avgScore = new double[lines];
+		
+		for(int i=0;i<lines;i++)
+		{
+			for(int j=0;j<5;j++)
+				switch(j)
+				{
+					case 0:bPScale=dataSet[i][j];
+					case 1:persTrait=dataSet[i][j];
+					case 2:creTrait=dataSet[i][j];
+					case 3:deTrait=dataSet[i][j];
+					case 4:teamTrait=dataSet[i][j];
+				}
+			avgScore[i]=(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
+			avgScore[i]=rounder(avgScore,i);
+		}
+		
+		return avgScore;
+	}
+	
+	public static double[] avgData(double[] avgScore, int lines)
+	{//This gets the average score of the participant.
+		double[] avgTotal=new double[lines/5];
+		
+		for(int i=0,j=0;i<lines;j++)
+		{
+			double a=0;
+			for(int k=0;k<5;k++,i++)
+				a=a+avgScore[i];
+			avgTotal[j]=a/5;
+			avgTotal[j]=rounder(avgTotal,j);
+		}
+		return avgTotal;
+	}
+	
+	public static double rounder(double[] a,int b)
+	{//Rounds to the nearest 100th.
+		return a[b]=Math.round(a[b] * 100.0) / 100.0;
 	}
 }
