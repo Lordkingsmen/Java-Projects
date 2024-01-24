@@ -70,7 +70,7 @@ public class Main
 					case 4:teamTrait=dataSet[i][j];
 				}
 			avgScore[i]=(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
-			avgScore[i]=rnd.h(avgScore[i]);
+			avgScore[i]=rnd.hun(avgScore[i]);
 		}
 		
 		return avgScore;
@@ -85,8 +85,7 @@ public class Main
 			double a=0;
 			for(int k=0;k<5;k++,i++)
 				a=a+avgScore[i];
-			avgTotal[j]=a/5;
-			avgTotal[j]=rnd.h(avgTotal[j]);
+			avgTotal[j]=rnd.hun(a/5);
 		}
 		return avgTotal;
 	}
