@@ -12,9 +12,9 @@ public class Main
 		
 		System.out.println(Arrays.deepToString(dataSet));
 		
-		System.out.println(Arrays.toString(setData(dataSet,lines)));
+		System.out.println(Arrays.deepToString(setData(dataSet,lines/5)));
 		
-		System.out.println(Arrays.toString(avgData(setData(dataSet,lines),lines)));
+		System.out.println(Arrays.toString(avgData(setData(dataSet,lines/5),lines/5)));
 	}
 	
 	public static double diff(double a)
@@ -30,7 +30,7 @@ public class Main
 	public static int lineCounter() throws IOException
 	{//Any file matching the name can be counted and prepared for the program.
 	      	int lines = 0;
-	      	BufferedReader reader = new BufferedReader(new FileReader("src\\Data.txt"));
+	      	BufferedReader reader = new BufferedReader(new FileReader("src/Data.txt"));
 				while (reader.readLine() != null) lines++;
 			reader.close();
 			while(!(lines%5==0))
@@ -40,7 +40,7 @@ public class Main
 	
 	public static double[][] readData(double[][] dataSet, int lines) throws IOException
 	{//This uses the now prepared array to actually input the data from the set.
-		Scanner fileScan = new Scanner(new File("src\\Data.txt"));
+		Scanner fileScan = new Scanner(new File("src/Data.txt"));
 		while (fileScan.hasNextInt())
 			for(int i=0;i<lines;i++)
 				for(int j=0;j<5;j++)
@@ -52,41 +52,34 @@ public class Main
 		return dataSet;
 	}
 	
-	public static double[] setData(double[][] dataSet, int lines)
+	public static double[][] setData(double[][] dataSet, int a)
 	{
 		double bPScale=0,persTrait=0,creTrait=0,deTrait=0,teamTrait=0;
 		
-		double[] avgScore = new double[lines];
+		double[][] avgScore = new double[a][5];
 		
-		for(int i=0;i<lines;i++)
-		{
+		for(int k=0;k<a;k++)
 			for(int j=0;j<5;j++)
-				switch(j)
-				{
-					case 0:bPScale=dataSet[i][j];
-					case 1:persTrait=dataSet[i][j];
-					case 2:creTrait=dataSet[i][j];
-					case 3:deTrait=dataSet[i][j];
-					case 4:teamTrait=dataSet[i][j];
-				}
-			avgScore[i]=(dSet(diff(persTrait),diff(creTrait),diff(deTrait),diff(teamTrait)));
-			avgScore[i]=rnd.hun(avgScore[i]);
-		}
-		
+			{
+				for(int i=0;i<a;i++)
+					switch(i)
+					{
+						case 0:bPScale=diff(dataSet[j+(k*5)][i]);
+						case 1:persTrait=diff(dataSet[j+(k*5)][i]);
+						case 2:creTrait=diff(dataSet[j+(k*5)][i]);
+						case 3:deTrait=diff(dataSet[j+(k*5)][i]);
+						case 4:teamTrait=diff(dataSet[j+(k*5)][i]);
+					}
+				avgScore[k][j]=rnd.hun(dSet(persTrait,creTrait,deTrait,teamTrait));
+			}
 		return avgScore;
 	}
 	
-	public static double[] avgData(double[] avgScore, int lines)
+	public static double[] avgData(double[][] avgScore, int a)
 	{//This gets the average score of the participant.
-		double[] avgTotal=new double[lines/5];
-		
-		for(int i=0,j=0;i<lines;j++)
-		{
-			double a=0;
-			for(int k=0;k<5;k++,i++)
-				a=a+avgScore[i];
-			avgTotal[j]=rnd.hun(a/5);
-		}
+		double[] avgTotal=new double[a];
+		for(int i=0;i<a;i++)
+			avgTotal[i]=rnd.hun(arr.addS(avgScore[i],5)/5);
 		return avgTotal;
 	}
 }
