@@ -31,7 +31,8 @@ public class Main
 	{//Any file matching the name can be counted and prepared for the program.
 	      	int lines = 0;
 	      	BufferedReader reader = new BufferedReader(new FileReader("src/Data.txt"));
-				while (reader.readLine() != null) lines++;
+			while (reader.readLine() != null)
+				lines++;
 			reader.close();
 			while(!(lines%5==0))
 				lines++;
@@ -41,13 +42,21 @@ public class Main
 	public static double[][] readData(double[][] dataSet, int lines) throws IOException
 	{//This uses the now prepared array to actually input the data from the set.
 		Scanner fileScan = new Scanner(new File("src/Data.txt"));
-		while (fileScan.hasNextInt())
+		if(fileScan.hasNextInt())
+			System.out.println(true);
+		else
+			System.out.println(fileScan.next());
+		while (fileScan.hasNext())
 			for(int i=0;i<lines;i++)
 				for(int j=0;j<5;j++)
+				{
+					String line = fileScan.nextLine();
+					String[] split = line.split(",");
 					if(!(fileScan.hasNextInt()))
 						dataSet[i][j]=0;
 					else
 						dataSet[i][j]=fileScan.nextInt();
+				}
 		fileScan.close();
 		return dataSet;
 	}
