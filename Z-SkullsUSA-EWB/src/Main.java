@@ -42,21 +42,17 @@ public class Main
 	public static double[][] readData(double[][] dataSet, int lines) throws IOException
 	{//This uses the now prepared array to actually input the data from the set.
 		Scanner fileScan = new Scanner(new File("src/Data.txt"));
-		if(fileScan.hasNextInt())
-			System.out.println(true);
-		else
-			System.out.println(fileScan.next());
+		String line = "";
+		double[] number = new double[lines];
 		while (fileScan.hasNext())
+		{
+			for(int i=0;i<lines;i++)line = line+fileScan.nextLine()+(i>=lines-1?"":",");
+			String[] split = line.split(",");
+			for(int i=0;i<lines;i++)number[i] = Double.valueOf(split[i]);
 			for(int i=0;i<lines;i++)
 				for(int j=0;j<5;j++)
-				{
-					String line = fileScan.nextLine();
-					String[] split = line.split(",");
-					if(!(fileScan.hasNextInt()))
-						dataSet[i][j]=0;
-					else
-						dataSet[i][j]=fileScan.nextInt();
-				}
+						dataSet[i][j]=number[j+(5*i)];
+		}
 		fileScan.close();
 		return dataSet;
 	}
@@ -79,7 +75,7 @@ public class Main
 						case 3:deTrait=diff(dataSet[j+(k*5)][i]);
 						case 4:teamTrait=diff(dataSet[j+(k*5)][i]);
 					}
-				avgScore[k][j]=rnd.hun(dSet(persTrait,creTrait,deTrait,teamTrait));
+				avgScore[k][j]=Matha.rnd(dSet(persTrait,creTrait,deTrait,teamTrait),10);
 			}
 		return avgScore;
 	}
@@ -88,7 +84,7 @@ public class Main
 	{//This gets the average score of the participant.
 		double[] avgTotal=new double[a];
 		for(int i=0;i<a;i++)
-			avgTotal[i]=rnd.hun(arr.addS(avgScore[i],5)/5);
+			avgTotal[i]=Matha.rnd(Matha.arrAddS(avgScore[i],5)/5,10);
 		return avgTotal;
 	}
 }
