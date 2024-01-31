@@ -43,15 +43,15 @@ public class Main
 	{//This uses the now prepared array to actually input the data from the set.
 		Scanner fileScan = new Scanner(new File("src/Data.txt"));
 		String line = "";
-		double[] number = new double[lines];
+		double[] number = new double[lines*5];
 		while (fileScan.hasNext())
 		{
 			for(int i=0;i<lines;i++)line = line+fileScan.nextLine()+(i>=lines-1?"":",");
 			String[] split = line.split(",");
-			for(int i=0;i<lines;i++)number[i] = Double.valueOf(split[i]);
-			for(int i=0;i<lines;i++)
-				for(int j=0;j<5;j++)
-						dataSet[i][j]=number[j+(5*i)];
+			for(int i=0;i<lines*5;i++)number[i] = Double.valueOf(split[i]);
+			for(int i=0,k=0;i<lines;i++)
+				for(int j=0;j<5;j++,k++)
+						dataSet[i][j]=number[k];
 		}
 		fileScan.close();
 		return dataSet;
