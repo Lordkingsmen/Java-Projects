@@ -1,0 +1,93 @@
+{
+  "projects": [
+    {
+      "name": "Project 1",
+      "students": [
+        {
+          "name": "Student 1",
+          "categories": {
+            "softskills": {
+              "Persistence": 4.2,
+              "Quality": 3.8,
+              "Teamwork": 5.0,
+              "Creativity": 4.5
+            },
+            "technical": {
+              "Programming": 3.9,
+              "Art": 2.7,
+              "Science": 4.1,
+              "Crafting": 5.5,
+              "Language": 3.2,
+              "History": 2.8
+            }
+          }
+        },
+        {
+          "name": "Student 2",
+          "categories": {
+            "softskills": {
+              "Persistence": 3.5,
+              "Quality": 4.0,
+              "Teamwork": 4.8,
+              "Creativity": 3.2
+            },
+            "technical": {
+              "Programming": 4.7,
+              "Art": 3.9,
+              "Science": 4.3,
+              "Crafting": 4.1,
+              "Language": 3.6,
+              "History": 2.9
+            }
+          }
+        }
+
+      ]
+    },
+    {
+      "name": "Project 2",
+      "students": [
+        {
+          "name": "Student 3",
+          "categories": {
+            "softskills": {
+              "Persistence": 4.0,
+              "Quality": 3.5,
+              "Teamwork": 4.2,
+              "Creativity": 3.8
+            },
+            "technical": {
+              "Programming": 4.0,
+              "Art": 3.5,
+              "Science": 4.2,
+              "Crafting": 3.9,
+              "Language": 4.1,
+              "History": 3.0
+            }
+          }
+        },
+        {
+          "name": "Student 4",
+          "categories": {
+            "softskills": {
+              "Persistence": 3.8,
+              "Quality": 3.2,
+              "Teamwork": 4.5,
+              "Creativity": 3.6
+            },
+            "technical": {
+              "Programming": 3.9,
+              "Art": 3.8,
+              "Science": 3.7,
+              "Crafting": 4.2,
+              "Language": 3.5,
+              "History": 3.2
+            }
+          }
+        }
+
+      ]
+    }
+
+  ]
+}

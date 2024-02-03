@@ -30,4 +30,17 @@ public class Matha
 			avgTotal[i]=Matha.rnd(Matha.arrAddS(avgScore[i],5)/5,100);
 		return avgTotal;
 	}
+	
+	public static String jobC(int a,int b,double[] arr)
+	{
+		if(arr[b]<1)
+			return "Hire";
+		else if(arr[b]<2)
+			return "Probably hire";
+		else if(arr[b]<2.5)
+			return "Maybe hire";
+		else if(arr[b]<3)
+			return "Need more info";
+		else return "don't hire";
+	}
 }

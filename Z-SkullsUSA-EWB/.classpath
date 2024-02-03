@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-19">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/com.ibm.icu_73.1.0.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/com.ibm.icu_73.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/javax.annotation_1.3.5.v20230504-0748.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/javax.annotation_1.3.5.v20230504-0748.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.core.commands_3.11.0.v20230317-0802.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.core.commands_3.11.0.v20230317-0802.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.core.runtime_3.27.0.v20230515-1719.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.core.runtime_3.27.0.v20230515-1719.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.e4.ui.di_1.5.0.v20230501-1823.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.e4.ui.di_1.5.0.v20230501-1823.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.common_3.18.0.v20230523-2142.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.common_3.18.0.v20230523-2142.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.registry_3.11.200.v20220817-1601.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.equinox.registry_3.11.200.v20220817-1601.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.jface_3.30.0.v20230509-0720.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.jface_3.30.0.v20230509-0720.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.jface.text_3.24.0.v20230525-0719.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.jface.text_3.24.0.v20230525-0719.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.osgi_3.18.400.v20230509-2241.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.osgi_3.18.400.v20230509-2241.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.124.0.v20230523-1044.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.124.0.v20230523-1044.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.text_3.13.0.v20230316-1200.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.text_3.13.0.v20230316-1200.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.forms_3.12.0.v20230317-0802.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.forms_3.12.0.v20230317-0802.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.workbench_3.129.0.v20230525-0648.jar" sourcepath="C:/Program Files (x86)/eclipse/plugins/org.eclipse.ui.workbench_3.129.0.v20230525-0648.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/com.ibm.icu_73.2.0.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/com.ibm.icu.source_73.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/javax.annotation_1.3.5.v20200909-1856.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/javax.annotation_1.3.5.v20200909-1856.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.core.commands_3.11.100.v20230708-0916.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.core.commands.source_3.11.100.v20230708-0916.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.core.runtime_3.29.0.v20230726-0617.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.core.runtime.source_3.29.0.v20230726-0617.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.e4.ui.di_1.5.100.v20230630-1554.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.e4.ui.di.source_1.5.100.v20230630-1554.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.equinox.common_3.18.100.v20230730-1117.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.equinox.common.source_3.18.100.v20230730-1117.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.equinox.registry_3.11.300.v20230801-1826.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.equinox.registry.source_3.11.300.v20230801-1826.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.jface_3.31.0.v20230821-1552.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.jface.source_3.31.0.v20230821-1552.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.jface.text_3.24.100.v20230727-0604.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.jface.text.source_3.24.100.v20230727-0604.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.osgi_3.18.500.v20230801-1826.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.osgi.source_3.18.500.v20230801-1826.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.swt.win32.win32.x86_64_3.124.100.v20230825-1346.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.124.100.v20230825-1346.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.text_3.13.100.v20230801-1334.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.text.source_3.13.100.v20230801-1334.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.ui.forms_3.13.0.v20230807-1354.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.ui.forms.source_3.13.0.v20230807-1354.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/.p2/pool/plugins/org.eclipse.ui.workbench_3.130.0.v20230822-0911.jar" sourcepath="C:/Users/Christian/.p2/pool/plugins/org.eclipse.ui.workbench.source_3.130.0.v20230822-0911.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christian/Downloads/json-simple-1.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
